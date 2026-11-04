@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#102d46">
+  <meta name="theme-color" content="#123b36">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Portal CBO">
@@ -14,14 +14,14 @@
   <title>Portal CBO</title>
   <style>
     :root {
-      --navy: #102d46;
-      --navy-deep: #0a2034;
-      --blue: #176b91;
-      --cyan: #42b7c5;
-      --gold: #e4b64f;
-      --ink: #183247;
-      --muted: #667b8b;
-      --paper: #f4f8fa;
+      --navy: #123b36;
+      --navy-deep: #0d2c28;
+      --blue: #1d6256;
+      --cyan: #b9d0c2;
+      --gold: #d8c7a5;
+      --ink: #1f302d;
+      --muted: #65756e;
+      --paper: #f5efe3;
       --white: #fff;
     }
     * { box-sizing: border-box; }
@@ -31,15 +31,14 @@
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--ink);
       background:
-        radial-gradient(ellipse at 12% 8%, rgba(66,183,197,.18), transparent 34rem),
-        radial-gradient(ellipse at 92% 92%, rgba(228,182,79,.13), transparent 30rem),
+        radial-gradient(ellipse at top, #e3eee7 0, #f5efe3 58%, #eee5d5 100%),
         var(--paper);
       display: flex;
       flex-direction: column;
     }
     .top-band {
       height: 9px;
-      background: linear-gradient(90deg, var(--cyan), var(--blue) 52%, var(--gold));
+      background: linear-gradient(90deg, #b9d0c2, #123b36 52%, #d8c7a5);
     }
     main {
       width: min(100% - 36px, 900px);
@@ -75,63 +74,63 @@
       color: var(--muted); font-size: .75rem; font-weight: 800;
       letter-spacing: .14em; text-transform: uppercase; margin: 0 0 16px;
     }
-    .section-label::after { content: ""; height: 1px; flex: 1; background: #dce6eb; }
+    .section-label::after { content: ""; height: 1px; flex: 1; background: #d9e1d9; }
     .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
     .portal-link {
       min-height: 112px; display: flex; align-items: center; gap: 17px;
       padding: 22px; text-decoration: none; color: inherit;
-      background: rgba(255,255,255,.94); border: 1px solid #e0e9ee;
+      background: rgba(255,255,255,.94); border: 1px solid #d9e1d9;
       border-radius: 18px; box-shadow: 0 5px 18px rgba(16,45,70,.045);
       transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
     }
     .portal-link:hover {
-      transform: translateY(-3px); border-color: rgba(23,107,145,.35);
+      transform: translateY(-3px); border-color: rgba(29,98,86,.35);
       box-shadow: 0 13px 28px rgba(16,45,70,.10);
     }
     .portal-link:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
     .portal-link.disabled {
-      background: #f0f3f5; border-style: dashed; box-shadow: none;
+      background: #f1eee6; border-style: dashed; box-shadow: none;
       cursor: not-allowed; opacity: .78;
     }
     .portal-link.disabled:hover { transform: none; }
     .icon {
       width: 54px; height: 54px; flex: 0 0 54px;
       display: grid; place-items: center; border-radius: 15px;
-      color: var(--blue); background: #e8f4f7;
+      color: var(--blue); background: #e5eee7;
     }
     .icon svg { width: 26px; height: 26px; stroke: currentColor; }
-    .disabled .icon { color: #71818c; background: #e4e9ec; }
+    .disabled .icon { color: #75827c; background: #e8ece5; }
     .copy { min-width: 0; flex: 1; }
     .copy strong { display: block; color: var(--navy); font-size: 1rem; margin-bottom: 5px; }
     .copy span { display: block; color: var(--muted); font-size: .85rem; line-height: 1.4; }
-    .arrow { color: #8ba0ad; font-size: 1.35rem; margin-left: auto; }
+    .arrow { color: #82928a; font-size: 1.35rem; margin-left: auto; }
     .soon {
       display: inline-block; margin-top: 7px; padding: 4px 8px;
-      border-radius: 20px; background: #e6ebee; color: #667783;
+      border-radius: 20px; background: #e8ece5; color: #65756e;
       font-size: .65rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase;
     }
     .agenda-section { margin-top: 42px; }
     .agenda-card {
-      overflow: hidden; background: rgba(255,255,255,.96); border: 1px solid #e0e9ee;
+      overflow: hidden; background: rgba(255,255,255,.96); border: 1px solid #d9e1d9;
       border-radius: 18px; box-shadow: 0 5px 18px rgba(16,45,70,.045);
     }
     .agenda-heading {
       display: flex; align-items: center; justify-content: space-between; gap: 16px;
-      padding: 22px 24px 16px; border-bottom: 1px solid #edf1f3;
+      padding: 22px 24px 16px; border-bottom: 1px solid #e7ece6;
     }
     .agenda-heading h3 { margin: 0 0 5px; color: var(--navy); font-size: 1.08rem; }
     .agenda-heading p { margin: 0; color: var(--muted); font-size: .86rem; line-height: 1.5; }
     .agenda-status {
       display: inline-flex; align-items: center; gap: 7px; white-space: nowrap;
-      color: #39745c; background: #edf7f1; border-radius: 30px;
+      color: #39745c; background: #edf4ed; border-radius: 30px;
       padding: 7px 10px; font-size: .72rem; font-weight: 750;
     }
-    .agenda-status span { width: 7px; height: 7px; border-radius: 50%; background: #43a477; }
+    .agenda-status span { width: 7px; height: 7px; border-radius: 50%; background: #4f9675; }
     .agenda-frame { display: block; width: 100%; height: 590px; border: 0; background: #fff; }
-    .agenda-link { margin: 0; padding: 13px 20px 17px; text-align: right; border-top: 1px solid #edf1f3; }
+    .agenda-link { margin: 0; padding: 13px 20px 17px; text-align: right; border-top: 1px solid #e7ece6; }
     .agenda-link a { color: var(--blue); font-size: .82rem; font-weight: 700; text-decoration: none; }
     .agenda-link a:hover { text-decoration: underline; }
-    footer { padding: 20px 18px 26px; text-align: center; color: #80919d; font-size: .78rem; }
+    footer { padding: 20px 18px 26px; text-align: center; color: #75827c; font-size: .78rem; }
     footer strong { color: var(--navy); font-weight: 700; }
     @media (max-width: 620px) {
       main { width: min(100% - 28px, 460px); padding: 38px 0 34px; }
