@@ -1,0 +1,25 @@
+{
+  "name": "Portal CBO",
+  "short_name": "Portal CBO",
+  "description": "Portal de Líderes da Comunidade Batista Oceânica",
+  "lang": "pt-BR",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f8fa",
+  "theme_color": "#102d46",
+  "icons": [
+    {
+      "src": "logo-cbo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "logo-cbo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
